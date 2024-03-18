@@ -1,0 +1,22 @@
+run:
+  concurrency: 4
+  timeout: 5m
+  issues-exit-code: 2
+  tests: false
+  go: "1.22"
+linters:
+  enable-all: true
+  disable:
+    - depguard
+    - maligned
+    - varcheck
+    - deadcode
+    - ifshort
+    - scopelint
+    - structcheck
+    - golint
+    - nosnakecase
+    - exhaustivestruct
+    - interfacer
+    - gofumpt
+    - varnamelen
