@@ -7,6 +7,7 @@ CREATE TABLE "users" (
     "secret" VARCHAR(512) NOT NULL,
     "is_blocked" BOOLEAN NOT NULL DEFAULT FALSE,
     "is_confirmed" BOOLEAN NOT NULL DEFAULT FALSE,
+    "is_deleted" BOOLEAN NOT NULL DEFAULT FALSE,
     "created_at" TIMESTAMP NOT NULL DEFAULT NOW(),
     "updated_at" TIMESTAMP NOT NULL DEFAULT NOW(),
 
