@@ -2,12 +2,19 @@ package contract
 
 import (
 	"context"
+	"database/sql"
 
 	"github.com/Shteyd/wallet-app/src/backend/internal/core/dto"
 	"github.com/Shteyd/wallet-app/src/backend/internal/core/entity"
 )
 
 type (
+	DBTX interface {
+		ExecContext(ctx context.Context, query string, args ...any) (sql.Result, error)
+		QueryContext(ctx context.Context, query string, args ...any) (*sql.Rows, error)
+		QueryRowContext(ctx context.Context, query string, args ...any) *sql.Row
+	}
+
 	RepositoryManager interface {
 		Begin(ctx context.Context) (RepositoryManager, error)
 		Commit(ctx context.Context) error
